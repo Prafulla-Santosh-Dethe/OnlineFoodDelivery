@@ -1,305 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom/client"
 
-/*
-Header:- logo,NavItems like Home, about cart
-Body:- searchBar, card container for cards[img,name, ratings, deliveryTime]
-Footer:- copyright, links, address, contact info
-*/
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=fast-food&sf=&txt_keyword=All"
-        />
-      </div>
-      <div className="nav-item">
+const Header=()=>{
+    return(
+     <div className="header">
+        <img className="logo" alt="logo" src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=fast-food&sf=&txt_keyword=All"/>
+       <div className="list-item">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+                <li>Cart</li>
+            </ul>
+       </div>
+     </div>
+    );
+}
 
-const styleCard = {
-  backgroundColor: "#f0f0f0",
-};
-
-// instead of props ({resName, cuisine}) called destructring on fly
-const RestaurantCrads = (props) => {
-    // De-structuring
-    const {resData} = props;
-    const data = resData.card.card.gridElements.infoWithStyle.restaurants
-    console.log("Data: ",data)
-  return (
-    <div  className="container">
-      {data.map((res)=>{
-        return(
-            <div className="res-cards"  key={res.info.id}>
-            {console.log("resInfo: "+res.info.name, res.info.cuisines, res.info.costForTwo, res.info.avgRating, res.info.sla.deliveryTime)}
-                 
-                <img className="foodimg" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+res.info.cloudinaryImageId} alt="imgFood"/>
-                <h3>{res.info.name}</h3>
-                <h4>{res.info.cuisines.join(",")}</h4>
-                <h4>{res.info.costForTwo}</h4>
-                <h4>{res.info.avgRating} Stars</h4>
-                <h4>{res.info.sla.deliveryTime} minutes</h4>  
-            </div>
-        )
-      })}
-    </div>
-  );
-};
-
-// Real data from swiggy api
-// const resObj ={
-//     "card": {
-//       "card": {
-//         "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
-//         "header": {
-//           "title": "Top restaurant chains in Pune",
-//           "action": {
-            
-//           },
-//           "headerStyling": {
-//             "padding": {
-//               "left": 16,
-//               "top": 28,
-//               "bottom": 18
-//             }
-//           }
-//         },
-//         "layout": {
-//           "rows": 1,
-//           "columns": 20,
-//           "horizontalScrollEnabled": true,
-//           "itemSpacing": 32,
-//           "widgetPadding": {
-            
-//           },
-//           "containerStyle": {
-//             "containerPadding": {
-//               "left": 16,
-//               "right": 12,
-//               "bottom": 12
-//             }
-//           },
-//           "scrollBar": {
-//             "scrollThumbColor": "#E46D47",
-//             "scrollTrackColor": "#02060C",
-//             "width": 54,
-//             "height": 4,
-//             "scrollStyling": {
-//               "padding": {
-//                 "top": 6,
-//                 "bottom": 24
-//               }
-//             }
-//           },
-//           "widgetTheme": {
-//             "defaultMode": {
-//               "backgroundColour": "#1B3028",
-//               "theme": "THEME_TYPE_DARK"
-//             },
-//             "darkMode": {
-//               "backgroundColour": "#1B3028",
-//               "theme": "THEME_TYPE_DARK"
-//             }
-//           }
-//         },
-//         "id": "top_brands_for_you",
-//         "gridElements": {
-//           "infoWithStyle": {
-//             "@type": "type.googleapis.com/swiggy.presentation.food.v2.FavouriteRestaurantInfoWithStyle",
-//             "restaurants": [
-//               {
-//                 "info": {
-//                   "id": "33722",
-//                   "name": "KFC",
-//                   "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/4/17/69e69c55-d2bb-4207-8310-131fc693f78a_33722.JPG",
-//                   "locality": "SGS Mall",
-//                   "areaName": "Camp Area",
-//                   "costForTwo": "₹400 for two",
-//                   "cuisines": [
-//                     "Burgers",
-//                     "Rolls & Wraps",
-//                     "Fast Food"
-//                   ],
-//                   "avgRating": 4.2,
-//                   "parentId": "547",
-//                   "avgRatingString": "4.2",
-//                   "totalRatingsString": "5K+",
-//                   "sla": {
-//                     "deliveryTime": 39,
-//                     "lastMileTravel": 3,
-//                     "serviceability": "SERVICEABLE",
-//                     "slaString": "35-40 mins",
-//                     "lastMileTravelString": "3.0 km",
-//                     "iconType": "ICON_TYPE_EMPTY"
-//                   },
-//                   "availability": {
-//                     "nextCloseTime": "2024-08-23 22:00:00",
-//                     "opened": true
-//                   },
-//                   "badges": {
-//                     "imageBadges": [
-//                       {
-//                         "imageId": "Rxawards/_CATEGORY-Burger.png",
-//                         "description": "Delivery!"
-//                       }
-//                     ]
-//                   },
-//                   "isOpen": true,
-//                   "type": "F",
-//                   "badgesV2": {
-//                     "entityBadges": {
-//                       "imageBased": {
-//                         "badgeObject": [
-//                           {
-//                             "attributes": {
-//                               "description": "Delivery!",
-//                               "imageId": "Rxawards/_CATEGORY-Burger.png"
-//                             }
-//                           }
-//                         ]
-//                       },
-//                       "textBased": {
-                        
-//                       },
-//                       "textExtendedBadges": {
-                        
-//                       }
-//                     }
-//                   },
-//                   "aggregatedDiscountInfoV3": {
-//                     "header": "40% OFF",
-//                     "subHeader": "UPTO ₹80"
-//                   },
-//                   "differentiatedUi": {
-//                     "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-//                     "differentiatedUiMediaDetails": {
-//                       "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-//                       "lottie": {
-                        
-//                       },
-//                       "video": {
-                        
-//                       }
-//                     }
-//                   },
-//                   "reviewsSummary": {
-                    
-//                   },
-//                   "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-//                   "restaurantOfferPresentationInfo": {
-                    
-//                   },
-//                   "externalRatings": {
-//                     "aggregatedRating": {
-//                       "rating": "--"
-//                     }
-//                   },
-//                   "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
-//                 },
-//                 "analytics": {
-                  
-//                 },
-//                 "cta": {
-//                   "link": "https://www.swiggy.com/restaurants/kfc-sgs-mall-camp-area-pune-33722",
-//                   "type": "WEBLINK"
-//                 }
-//               },
-//             ],
-//             "theme": "Restaurant_Group_WebView_SEO_PB_Theme",
-//             "widgetType": "WIDGET_TYPE_POPULAR_BRANDS",
-//             "style": {
-//               "width": {
-//                 "type": "TYPE_RELATIVE",
-//                 "value": 0.41111112,
-//                 "reference": "RELATIVE_DIMENSION_REFERENCE_DEVICE_WIDTH"
-//               },
-//               "height": {
-//                 "type": "TYPE_RELATIVE",
-//                 "value": 0.7027027,
-//                 "reference": "RELATIVE_DIMENSION_REFERENCE_WIDTH"
-//               },
-//               "layoutAlignment": "LAYOUT_ALIGNMENT_LEFT"
-//             },
-//             "collectionId": "84124"
-//           }
-//         }
-//       }
-//     }
-//   }
-
-// multiple restaurants
-const resObj=      {
-    "card": {
-      "card": {
-        "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
-        "header": {
-          "title": "Top restaurant chains in Pune",
-          "action": {
-            
-          },
-          "headerStyling": {
-            "padding": {
-              "left": 16,
-              "top": 28,
-              "bottom": 18
-            }
-          }
-        },
-        "layout": {
-          "rows": 1,
-          "columns": 20,
-          "horizontalScrollEnabled": true,
-          "itemSpacing": 32,
-          "widgetPadding": {
-            
-          },
-          "containerStyle": {
-            "containerPadding": {
-              "left": 16,
-              "right": 12,
-              "bottom": 12
-            }
-          },
-          "scrollBar": {
-            "scrollThumbColor": "#E46D47",
-            "scrollTrackColor": "#02060C",
-            "width": 54,
-            "height": 4,
-            "scrollStyling": {
-              "padding": {
-                "top": 6,
-                "bottom": 24
-              }
-            }
-          },
-          "widgetTheme": {
-            "defaultMode": {
-              "backgroundColour": "#1B3028",
-              "theme": "THEME_TYPE_DARK"
-            },
-            "darkMode": {
-              "backgroundColour": "#1B3028",
-              "theme": "THEME_TYPE_DARK"
-            }
-          }
-        },
-        "id": "top_brands_for_you",
-        "gridElements": {
-          "infoWithStyle": {
-            "@type": "type.googleapis.com/swiggy.presentation.food.v2.FavouriteRestaurantInfoWithStyle",
-            "restaurants": [
+// Restaurants data in array with complete detail info for that restaurant
+const resObj=[
               {
                 "info": {
                   "id": "33722",
@@ -2265,65 +1984,111 @@ const resObj=      {
                   "type": "WEBLINK"
                 }
               }
-            ],
-            "theme": "Restaurant_Group_WebView_SEO_PB_Theme",
-            "widgetType": "WIDGET_TYPE_POPULAR_BRANDS",
-            "style": {
-              "width": {
-                "type": "TYPE_RELATIVE",
-                "value": 0.41111112,
-                "reference": "RELATIVE_DIMENSION_REFERENCE_DEVICE_WIDTH"
-              },
-              "height": {
-                "type": "TYPE_RELATIVE",
-                "value": 0.7027027,
-                "reference": "RELATIVE_DIMENSION_REFERENCE_WIDTH"
-              },
-              "layoutAlignment": "LAYOUT_ALIGNMENT_LEFT"
-            },
-            "collectionId": "84124"
-          }
-        }
-      }
-    }
-  }
+            ]
+const ResCards=(props)=>{
+    //console.log(props.resData[0]) as props.key from parent gives data nd it's array so with 0 we get 0-index data from resData
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">searchBar</div>
-      <div className="resContainer">
-        {/* ResCards */}
-        {/* <RestaurantCrads resName="SA Dosa Cafe" 
-        cuisine="South Indian Food" 
-        rating="4.1 (500+ ratings)" 
-        time="30-35 mins" /> */}
+    // props => gives entire obj for that passed data
+    // props.resData =>gives only value of that resData attribute passed from parent
+    console.log(props)
+    console.log(props.resData)
 
-        {/* passed real data taken from swiggy website nd store it in resObj which passed as value to resData prop attribute */}
-        <RestaurantCrads resData={resObj} />
-       
-        {/* <RestaurantCrads
-          resName="Burger King"
-          cuisine="Burgers,American"
-          rating="4.2 (10K+ ratings)"
-          time="50-55 mins"
-        /> */}
-      </div>
-    </div>
-  );
-};
+    // De-Structure values of restaurant like name, cuisines, rating time etc
+    const {name, cuisines, time, sla, avgRating,cloudinaryImageId} = props.resData.info
 
-const AppLayout = () => {
-  return (
-    <div className="App">
-      {/* Header
-            Body
-            Footer */}
-      <Header />
-      <Body />
-    </div>
-  );
-};
+    
+    // if no sla used above below is also way to get deliveryTime
+    const {deliveryTime} =props.resData.info.sla;
+    return(
+        <div className="cards">
+            {/* Rigid way to do */}
+            {/* <img className="resImg" alt="foodimg" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f58a2e0f3bb68ed0798f3e36c21c7cd0"/>
+            <h3>Name</h3>
+            <h4 style={{display:"flex", justifyContent:"space-between"}}><span>Rating</span> <span>Time</span></h4>
+            <h4>cuisines</h4> */}
+
+            {/* Dynamic way with dynamic data */}
+            <img className="resImg" alt="foodimg" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId}/>
+            <h3 style={{fontSize:"20px", fontFamily:"cursive"}}>{name}</h3>
+            <h4 style={{display:"flex", justifyContent:"space-between"}}><span>{avgRating} Stars</span> <span>{sla.deliveryTime} minutes</span></h4>
+            <h4>{cuisines}</h4> 
+        </div>
+    )
+}
+
+const Body =()=>{
+    return(
+     <div className="body">
+        <div className="searchBar">
+            <input className="input" type="text" placeholder="Search for restaurant and food"></input>
+            <button className="btn">search</button><br/>
+        </div>
+         <h2 style={{marginLeft:"400px", fontFamily:"cursive", marginTop:"10px"}}>Popular Cuisines</h2>
+         <div className="menuContainer">
+            <img className="menuImg" alt="menuImg" 
+            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/b4ff78ecc5b8b66f732dd06228916d65"/>
+            
+            <img className="menuImg" alt="menuImg" 
+            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/5dd234f7decdac4b4f71a2ff1408e10f"/>
+           
+            <img className="menuImg" alt="menuImg" 
+            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/3df4fca020027e89b89c733cdffc4966"/>
+            
+            
+            <img className="menuImg" alt="menuImg" 
+            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/8322f6d6df488dc1f5a6674cfe863f0f"/>
+            
+            
+            <img className="menuImg" alt="menuImg" 
+            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/87664acb0f9dd95d10a549bb8190ab27"/>
+            
+            <img className="menuImg" alt="menuImg" 
+            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/e76b511935016406e6ebc11dd7593387"/>
+        </div> 
+
+        {/* without loop/map */}
+        {/* <div className="resContainer">
+                <ResCards resData={resObj[0]}/>
+                <ResCards resData={resObj[1]}/>
+                <ResCards resData={resObj[2]}/>
+                <ResCards resData={resObj[3]}/>
+                <ResCards resData={resObj[4]}/>
+                <ResCards resData={resObj[5]}/>
+                <ResCards resData={resObj[6]}/>
+                <ResCards resData={resObj[7]}/>
+                <ResCards resData={resObj[8]}/>
+                <ResCards resData={resObj[9]}/>
+                <ResCards resData={resObj[10]}/>
+                <ResCards resData={resObj[11]}/>
+                <ResCards resData={resObj[12]}/>
+                <ResCards resData={resObj[13]}/>
+                <ResCards resData={resObj[14]}/>
+                <ResCards resData={resObj[15]}/>
+                <ResCards resData={resObj[16]}/>
+                <ResCards resData={resObj[17]}/>
+                
+        </div> */}
+        <div className="resContainer">
+            {resObj.map((restaurant)=>{
+                return(
+                <ResCards key={restaurant.info.id} resData={restaurant}/>
+                )
+            })}
+        </div>
+
+     </div>
+    )
+}
+
+
+const AppLayout =()=>{
+    return(
+        <div className="App">
+           <Header />
+           <Body />
+        </div>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<AppLayout/>)
