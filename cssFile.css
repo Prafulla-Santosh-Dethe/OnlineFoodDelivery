@@ -1,0 +1,297 @@
+/* .header{
+    display:flex;
+    /* border: 2px solid black; 
+    background-color: white;
+    justify-content: space-between;
+}
+.logIn{
+    margin-top: 15px;
+    margin-right: 10px;
+    padding: 10px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+} */
+/* .logo{
+    width: 120px;
+}
+
+.list-item ul{
+    display: flex;
+   
+}
+.list-item ul li{
+    padding: 5px;
+    margin: 15px;
+    font-size: 23px;
+    list-style-type: none;
+}
+.list-item ul li:hover{
+    color: rgb(248, 120, 60);
+} */
+/* .searchBtnContainer{
+    display: flex;
+    justify-content: center;
+} */
+/* .searchBar{
+ margin: 30px;
+ padding: 10px;
+ display: flex; */
+ /* border: 2px solid palevioletred; */
+ /* justify-content: center;
+ align-items: center;
+}
+.menuContainer{
+    display: flex;
+    justify-content: center;
+}
+.menuImg{
+    width: 110px;
+    height: 110px;
+    padding: 4px;
+    border-radius: 45%;
+  object-fit: cover;
+} */
+/* .btn{
+    margin: 10px;
+    background-color: rgb(63, 63, 254);
+    color: white;
+    width: 70px;
+    height: 32px;
+    border: 2px solid rgb(63, 63, 254);
+    border-radius: 5px;
+    
+}
+.btn:hover{
+    border: 2px solid rgb(79, 7, 127);
+    background-color: rgb(79, 7, 127);
+    color: white;
+}
+.input{
+    margin: 5px;
+    height: 30px;
+    width: 400px;
+    text-align: center;
+    border: 2px solid rgb(172, 170, 170);
+    border-radius: 1px;
+}  
+.input::placeholder{
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(240, 237, 237); */
+    /* border: 2px solid purple; */
+/* }
+.shimmerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px;
+    margin-top: 30px;
+    padding: 10px;
+}
+.shimmerCard{
+    margin: 10px;
+    padding: 8px;
+    width: 240px;
+    height: 300px;
+    background-color: rgb(253, 246, 246); */
+    /* border: 2px solid black; */
+    /* overflow: hidden;
+    text-align: left;
+}
+.resContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px;
+    margin-top: 30px;
+    padding: 10px; */
+    /* //justify-content: center; */
+    /* border: 1px solid rgb(68, 176, 231); */
+/* } */
+/* .cards{
+    margin: 10px;
+    padding: 8px;
+    width: 240px;
+    height: 300px;
+    background-color: rgb(253, 246, 246); */
+    /* border: 2px solid black; */
+    /* overflow: hidden;
+    text-align: left;
+}
+.cards h3, .cards h4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cards:hover{ */
+    /* border: 1px solid rgb(243, 241, 239); */
+/* }
+.resImg{
+    width: 98%;
+    height: 41%;
+    border-radius: 5px;
+}
+.resImg:hover{
+    width: 100%;
+    height: 48%;
+    border-radius: 7px;
+}
+.filter{ */
+    /* display: flex;
+    justify-content: center; */
+/* }
+.filter-btn{ */
+    /* display: flex;
+    justify-content: center; */
+    /* margin-left: 65px;
+    padding: 10px;
+    width: 250px;
+    cursor: pointer;
+}
+.filter-btn:hover{
+    border: 2PX solid  rgba(250, 223, 246, 0.855);
+} */
+
+/* RestaurantMenu CSS */
+/* .mainMenu{
+    background-color: rgb(247, 246, 247);
+    width: 100%;
+}
+.menu{
+   display: flex;
+    justify-content: center;
+} */
+/* .resName {
+    margin-left: 7px;
+
+ }
+.menuData{
+    padding: 10px;
+    width: 680px;
+    height: 240px;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 
+    -10px 10px 10px rgba(102, 101, 101, 0.3), 
+    10px 10px 10px rgba(116, 115, 115, 0.2), 
+    0px 10px 10px rgba(113, 112, 112, 0.2);
+
+} */
+/* .resMenuImg{
+    width: 50px;
+    height: 3s0px;
+}
+.recommended{
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 380px;
+    margin-right: 380px;
+    width: 100%s;
+    /* border: 1px solid black; 
+} */
+/* .menuHeading{
+    display: flex;
+    justify-content: space-between;
+}
+.listLength{
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.toggle{
+    border: none;
+    background: none;
+    padding: 0;
+    width: 50px;
+    height: 45px;
+} */
+/* .icon{
+    font-size: 1040px;
+    height: 150px;
+    width: 150px;
+} 
+ .recoContainer{
+    display: flex;
+    justify-content: space-between;
+    /* box-sizing: border-box; 
+}
+.detail{
+    text-align: left;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-left: 45px;
+}
+.dishImg{
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.dishImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+} */
+/* menuItem */
+/* .menuItem1{
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 380px;
+    margin-right: 380px;
+    width: 100%s;
+}
+.itemCard1{
+    display: flex;
+    justify-content: space-between;
+}
+.itemImg{
+    width: 350px;
+    height: 220px;
+    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.itemImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+/* footer */
+/* .footer{
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 380px;
+    margin-right: 380px;
+    margin-bottom: 30px;
+    padding: 30px;
+    width: 100%s;
+    background-color: rgb(214, 214, 214);
+}
+.fassai{
+    display: flex;
+}
+.fassai h3{
+    margin-left: 15px;
+    padding: 10px;
+} */
+
+/* User */
+/* .userCard{
+    margin-top: 50px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 20px;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 5px;
+} */
