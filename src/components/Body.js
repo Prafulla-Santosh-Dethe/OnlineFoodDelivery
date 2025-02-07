@@ -120,16 +120,16 @@ const Body =()=>{
         
                     const filterList=listOfRestaurants.filter(
                     //   with if
-                        // (res)=>{
-                        //     if(res.info.avgRating>4){
-                        //         {console.log(res.info.avgRating)}
-                        //         return listOfRestaurants;
+                        (res)=>{
+                            if(res.info.avgRating>4){
+                                {console.log(res.info.avgRating)}
+                                return listOfRestaurants;
 
-                        //     }
-                        // }
+                            }
+                        }
 
                         // without if
-                        (res)=>res.info.avgRating>4
+                        // (res)=>res.info.avgRating>4
                         
                     )
                     console.log("filterList: "+filterList)
