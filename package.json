@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "This is Namaste React Series",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest"
@@ -23,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/Prafulla-Santosh-Dethe/namaste-react/issues"
   },
-  "homepage": "https://github.com/Prafulla-Santosh-Dethe/namaste-react#readme",
+  "homepage": "https://github.com/Prafulla-Santosh-Dethe/OnlineFoodDelivery",
   "devDependencies": {
     "parcel": "^2.13.3",
     "postcss": "^8.4.47",
